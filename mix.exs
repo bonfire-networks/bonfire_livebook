@@ -9,7 +9,7 @@ defmodule Bonfire.Livebook.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      compilers: [:phoenix] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: Mess.deps [
@@ -27,10 +27,6 @@ defmodule Bonfire.Livebook.MixProject do
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
-
-  @bonfire_deps [
-    "pointers",
-  ] |> Enum.join(" ")
 
   defp aliases do
     [

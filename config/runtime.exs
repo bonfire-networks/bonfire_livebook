@@ -1,4 +1,6 @@
-# make sure you copy this to the parent app's runtime.exs
+import Config
+
+# make sure you copy the below to the parent app's runtime.exs
 
 config :livebook, :root_path, Livebook.Config.root_path!("LIVEBOOK_ROOT_PATH")
 
