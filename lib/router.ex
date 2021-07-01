@@ -18,4 +18,14 @@ defmodule LivebookWeb.Router do
   end
 
   use Bonfire.Livebook.Web.Routes
+
+  # pages only admins can view
+  scope "/admin/", LivebookWeb do
+    pipe_through :browser
+    pipe_through :livebook
+    pipe_through :admin_required
+    pipe_through :livebook_auth
+
+    live_dashboard "/system"
+  end
 end
