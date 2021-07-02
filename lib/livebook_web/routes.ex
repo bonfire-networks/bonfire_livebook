@@ -4,7 +4,7 @@ defmodule Bonfire.Livebook.Web.Routes do
     quote do
 
       pipeline :livebook do
-        plug :put_root_layout, {LivebookWeb.LayoutView, :root}
+        plug :put_root_layout, {Bonfire.Livebook.LayoutView, :root}
       end
 
       pipeline :livebook_auth do
