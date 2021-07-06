@@ -51,8 +51,8 @@ defmodule Bonfire.Livebook.Web.Routes do
         pipe_through :admin_required
 
         # second layer of authentication provided by Livebook
-        get "/", AuthController, :index
-        post "/", AuthController, :authenticate
+        unquote(LivebookWeb.Routes.authenticate_paths())
+
       end
 
       # pages only admins can view
@@ -62,23 +62,7 @@ defmodule Bonfire.Livebook.Web.Routes do
         pipe_through :admin_required
         pipe_through :livebook_auth
 
-        live "/", HomeLive, :page
-        live "/home/user-profile", HomeLive, :user
-        live "/home/import/:tab", HomeLive, :import
-        live "/home/sessions/:session_id/close", HomeLive, :close_session
-        live "/explore", ExploreLive, :page
-        live "/explore/user-profile", ExploreLive, :user
-        live "/explore/notebooks/:slug", ExploreLive, :notebook
-        live "/sessions/:id", SessionLive, :page
-        live "/sessions/:id/user-profile", SessionLive, :user
-        live "/sessions/:id/shortcuts", SessionLive, :shortcuts
-        live "/sessions/:id/settings/runtime", SessionLive, :runtime_settings
-        live "/sessions/:id/settings/file", SessionLive, :file_settings
-        live "/sessions/:id/bin", SessionLive, :bin
-        live "/sessions/:id/cell-settings/:cell_id", SessionLive, :cell_settings
-        live "/sessions/:id/cell-upload/:cell_id", SessionLive, :cell_upload
-        live "/sessions/:id/delete-section/:section_id", SessionLive, :delete_section
-        get "/sessions/:id/images/:image", SessionController, :show_image
+        unquote(LivebookWeb.Routes.main_paths())
 
       end
 
