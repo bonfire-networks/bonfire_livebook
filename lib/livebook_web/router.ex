@@ -1,3 +1,4 @@
+Code.put_compiler_option(:ignore_module_conflict, true)
 defmodule LivebookWeb.Router do
   use LivebookWeb, :router
   import Phoenix.LiveDashboard.Router
@@ -29,3 +30,4 @@ defmodule LivebookWeb.Router do
     live_dashboard "/system"
   end
 end
+Code.put_compiler_option(:ignore_module_conflict, false)
