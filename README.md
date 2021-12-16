@@ -1,4 +1,4 @@
-# Bonfire:Livebook
+# Bonfire.Livebook
 
 An extension for [Bonfire](https://bonfire.cafe/) that adds :
 
