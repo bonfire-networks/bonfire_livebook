@@ -22,6 +22,9 @@ defmodule Bonfire.Livebook.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
+
+      import Bonfire.UI.Common.Testing.Helpers
+
       import Phoenix.LiveViewTest
       import Bonfire.Livebook.ConnCase
       import Bonfire.Livebook.Test.ConnHelpers
