@@ -38,12 +38,10 @@ defmodule Bonfire.Livebook.ConnCase do
   end
 
   setup tags do
-
     import Bonfire.Common.Config, only: [repo: 0]
 
-     Bonfire.Common.Test.Interactive.setup_test_repo(tags)
+    Bonfire.Common.Test.Interactive.setup_test_repo(tags)
 
     {:ok, []}
   end
-
 end
