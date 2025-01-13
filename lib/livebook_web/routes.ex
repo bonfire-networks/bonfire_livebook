@@ -1,5 +1,5 @@
 defmodule Bonfire.Livebook.Web.Routes do
-  def declare_routes, do: "livebook"
+  @behaviour Bonfire.UI.Common.RoutesModule
 
   defmacro __using__(_) do
     quote do
